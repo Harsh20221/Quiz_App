@@ -16,12 +16,12 @@ void main() {
             child: Column(
                 mainAxisSize: MainAxisSize.min,
 
-                /// Iskko likha kyuki Image centre pe align ho jaaye
+                ///? Iskko likha kyuki Image centre pe align ho jaaye
                 children: [
                   /// Children ko aise [] table me likhna hai
                   Image.asset("assets/images/quiz-logo.png" , color: Color.fromRGBO(250, 250, 250, 0.5),) , // We can also add color to image to create a transparency effect
                   const SizedBox(height: 20), /// To add space between two widgets
-                  /// To add space between two widgets
+                  ///? To add space between two widgets
                   Text("Learn Flutter the Fun Way!",
                       style: TextStyle(
                           color: Color.fromRGBO(241, 227, 241, 1),
