@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'start_sceen.dart';
+import 'questions_screen.dart';
 
 ///! This is how you will import the file from another dart file
-//! Please do not forget to do this import
+//! Please do not forget to do this import for all the dart files
 
 class Quiz extends StatefulWidget {
   @override
@@ -13,6 +14,16 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  Widget activescreen =
+      Startscreen(); //?This is the variable which will be used to change the screen
+  void switchscreen() {
+    setState(() {
+      activescreen =
+          QuestionsScreen(); //? This is how you will change the screen  from start screen to Qestions screen ,
+          //? this set state will make sure that the screen is changed
+    });
+  }
+
   @override
   Widget build(context) {
     return MaterialApp(
