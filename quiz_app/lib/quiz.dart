@@ -36,7 +36,7 @@ class _QuizState extends State<Quiz> {
                     end: Alignment.topCenter,
                   ),
                 ),
-                child: Startscreen())));
+                child: activescreen)));//*Here we'll have our variable activescreen , This'll help us to change screen based on user input 
   } //! This is how you will call the function class
 }
 
