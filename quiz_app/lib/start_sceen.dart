@@ -6,17 +6,35 @@ class Startscreen extends StatelessWidget {
   @override //? The word override will be written in small letters not like Override
   Widget build(context) {
     return Center(
+        //! This Center will make sure that the widget is in the center of the screen
         child: Column(
+      mainAxisSize: MainAxisSize //! Very important to write this
+          .min, //? This will make sure that the column will take the minimum space required
       children: [
-        Image.asset("assets/images/quiz-logo.png"),
+        Image.asset(
+          "assets/images/quiz-logo.png",
+          width: 300,
+          color: const Color.fromRGBO(255, 255, 255, 150),
+        ), //! This will add opacity to image
         SizedBox(height: 80),
+
+        ///* FUNFACT: to change the property of any widget and specify the widget elements and inside the widget use , to add multiple properties
         Text(
           "Learn Flutter the fun Way ",
           style: TextStyle(
               fontSize: 24, color: Color.fromARGB(255, 237, 223, 252)),
         ),
-        const SizedBox(height: 30), //? To add space between two widgets use height inside SizedBox
-        OutlinedButton(onPressed:() {}, child:Text("Start Quiz") ,)
+        const SizedBox(
+            height:
+                30), //? To add space between two widgets use height inside SizedBox
+        OutlinedButton.icon(
+          //! In order to add icon in button write OutlinedButton.icon
+          onPressed: () {},
+          icon: Icon(Icons
+              .arrow_right_alt), //! The icon will be written as icon and it is a must
+          style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+          label: Text("Start Quiz"), //! the child will be written as label
+        )
       ],
     ));
   }
