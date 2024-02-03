@@ -25,6 +25,9 @@ class _QuizState extends State<Quiz> {
   @override  
   //TODO: Don't Forget to use the @override keyword  before the build method
   Widget build(context) { // Implement the missing build method
+  ;/* Widget screenwidget=Startscreen(switchScreen);
+  if(activescreen=='questions-screen'){ ///! This is an Alternate method to change the screen
+    screenwidget=const QuestionsScreen() */
     return MaterialApp(
       home: Scaffold(
         body: Container(
