@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Startscreen extends StatelessWidget {
-  Startscreen(
+  Startscreen(this.startQuiz,
       {super.key}); //! The name Startscreen will be same as the class name don't change cases from upper to lower
+  final Function startQuiz; //! This is the function which will be used to change the screen
   @override //? The word override will be written in small letters not like Override
   Widget build(context) {
     return Center(
@@ -29,7 +30,7 @@ class Startscreen extends StatelessWidget {
                 30), //? To add space between two widgets use height inside SizedBox
         OutlinedButton.icon(
           //! In order to add icon in button write OutlinedButton.icon
-          onPressed: () {},
+          onPressed: () {startQuiz();},
           icon: Icon(Icons
               .arrow_right_alt), //! The icon will be written as icon and it is a must
           style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
