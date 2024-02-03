@@ -6,40 +6,42 @@ import 'questions_screen.dart';
 //! Please do not forget to do this import for all the dart files
 
 class Quiz extends StatefulWidget {
-  @override
-  State<Quiz> createState() {
-    //! Do not write createState as createstate(){} it will give error , the s in the state is in capital
-    return _QuizState();  //?This will return the state of the class _QuizState
-  }
+const Quiz({super.key});
+@override
+State<Quiz> createState() {
+return _QuizState();
 }
+}
+class _QuizState extends State<Quiz> {
+  var activescreen = 'start-screen';   //? This is the variable which will be used to change the screen
+   //* Here we are initialising activescreen with start-screen
 
-class _QuizState extends State<Quiz> { ///? This is the state of the class Quiz
- var activescreen='start-screen'; //! This is the variable which will be used to change the screen
-  @override
-  void initState() {
-  
-  void switchscreen() {
+  void switchScreen() {
     setState(() {
-      activescreen ='questions-screen';
-          ; //? This is how you will change the screen  from start screen to Qestions screen ,
-          //? this set state will make sure that the screen is changed
+      activescreen = 'questions-screen';  //? Here we are changing activescreen to questions-screen
     });
   }
 
-  @override
-  Widget build(context) {
+  @override  
+  //TODO: Don't Forget to use the @override keyword  before the build method
+  Widget build(context) { // Implement the missing build method
     return MaterialApp(
-        home: Scaffold(
-            body: Container(
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF480366), Color(0xFFA60AF4)],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                  ),
-                ),
-                child:activescreen=='start-screen'?Startscreen(switchscreen):const QuestionsScreen())));//*Here we'll have our variable activescreen , This'll help us to change screen based on user input 
-  } //TODO: HERE MAKE SURE TO USE TERNARY OPERATOR TO CHANGE THE SCREEN  , TERNARY OPERATOR WILL BE USED TO CHANGE THE SCREEN BASED ON THE USER INPUT, ternary operators are like if else statements but they are used in a single line
+      home: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [Color(0xFF480366), Color(0xFFA60AF4)],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+          ),
+          child: activescreen == 'start-screen'
+              ? Startscreen(switchScreen)
+              : const QuestionsScreen(),
+        ),
+      ),
+    );
+  }
 }
 
 
