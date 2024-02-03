@@ -17,10 +17,10 @@ class Startscreen extends StatelessWidget {
           width: 300,
           color: const Color.fromRGBO(255, 255, 255, 150),
         ), //! This will add opacity to image
-        SizedBox(height: 80),
+        const SizedBox(height: 80),
 
         ///* FUNFACT: to change the property of any widget and specify the widget elements and inside the widget use , to add multiple properties
-        Text(
+        const Text(
           "Learn Flutter the fun Way ",
           style: TextStyle(
               fontSize: 24, color: Color.fromARGB(255, 237, 223, 252)),
@@ -30,11 +30,13 @@ class Startscreen extends StatelessWidget {
                 30), //? To add space between two widgets use height inside SizedBox
         OutlinedButton.icon(
           //! In order to add icon in button write OutlinedButton.icon
-          onPressed: () {startQuiz();},
-          icon: Icon(Icons
+          onPressed: () {
+            startQuiz();
+          },
+          icon: const Icon(Icons
               .arrow_right_alt), //! The icon will be written as icon and it is a must
           style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-          label: Text("Start Quiz"), //! the child will be written as label
+          label: const Text("Start Quiz"), //! the child will be written as label
         )
       ],
     ));

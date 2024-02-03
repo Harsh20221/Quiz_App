@@ -35,7 +35,9 @@ class _QuizState extends State<Quiz> {
               end: Alignment.topCenter,
             ),
           ),
-          child: activescreen == 'start-screen'
+          child: activescreen == 'start-screen'  //* This is how ternary operator is used in the code
+//*  condition ? value_if_true : value_if_false
+
               ? Startscreen(switchScreen)
               : const QuestionsScreen(),
         ),
@@ -59,8 +61,6 @@ class _QuizState extends State<Quiz> {
 ///?The `@override` is just a note to say "Hey, I know the original recipe said lettuce, but I'm intentionally using spinach instead.In your code, `@override` is used twice:1. In the `Quiz` class, `@override` is used before `createState()`. This means you're providing your own version of the `createState()` 
 ///?method that comes from the `StatefulWidget` class (the parent class).2. In the `_QuizState` class, `@override` is used before `build()`. This means you're providing your own version of the `build()` method that comes from the `State` class (the parent class).
 
-//* This is how ternary operator is used in the code
-//*  condition ? value_if_true : value_if_false
 
 
 
