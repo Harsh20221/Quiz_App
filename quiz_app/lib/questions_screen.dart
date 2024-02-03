@@ -1,7 +1,7 @@
-import 'package:flutter/widgets.dart';
-///
+import 'package:flutter/material.dart';
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({Key? key}) : super(key: key);
+
   @override
   State<QuestionsScreen> createState() {
     return _QuestionsScreenState();
@@ -11,7 +11,18 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("Questions Screen"),);
+    return SizedBox(   ///! MAKE SURE TO RETURN SIZED BOX HERE to get the full screen
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center, //? This is used to align the column in the center
+        children: [
+          Text("This Question...."),
+          OutlinedButton(onPressed: () {}, child: const Text("Answer1")),
+          OutlinedButton(onPressed: () {}, child: const Text("Answer2")),
+          OutlinedButton(onPressed: () {}, child:const  Text("Answer3")),
+        ],
+      ),
+    );
   }
 }
 
