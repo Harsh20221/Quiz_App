@@ -14,16 +14,14 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> { ///? This is the state of the class Quiz
-  Widget ?activescreen;   //! This is the variable which will be used to change the screen
+ var activescreen='start-screen'; //! This is the variable which will be used to change the screen
   @override
   void initState() {
-    super.initState();
-    activescreen = Startscreen(switchscreen); //! This is how you will call the function class
-  }
+  
   void switchscreen() {
     setState(() {
-      activescreen =
-          QuestionsScreen(); //? This is how you will change the screen  from start screen to Qestions screen ,
+      activescreen ='questions-screen';
+          ; //? This is how you will change the screen  from start screen to Qestions screen ,
           //? this set state will make sure that the screen is changed
     });
   }
@@ -40,9 +38,17 @@ class _QuizState extends State<Quiz> { ///? This is the state of the class Quiz
                     end: Alignment.topCenter,
                   ),
                 ),
-                child: activescreen)));//*Here we'll have our variable activescreen , This'll help us to change screen based on user input 
-  } //! This is how you will call the function class
+                child:activescreen=='start-screen'?Startscreen(switchscreen):const QuestionsScreen())));//*Here we'll have our variable activescreen , This'll help us to change screen based on user input 
+  } //TODO: HERE MAKE SURE TO USE TERNARY OPERATOR TO CHANGE THE SCREEN  , TERNARY OPERATOR WILL BE USED TO CHANGE THE SCREEN BASED ON THE USER INPUT, ternary operators are like if else statements but they are used in a single line
 }
+
+
+
+
+
+
+
+
 
 ///??? COMMENTS---
 ///?In this code, `@override` is used to tell Dart that we're intentionally replacing or "overriding"
@@ -51,6 +57,8 @@ class _QuizState extends State<Quiz> { ///? This is the state of the class Quiz
 ///?The `@override` is just a note to say "Hey, I know the original recipe said lettuce, but I'm intentionally using spinach instead.In your code, `@override` is used twice:1. In the `Quiz` class, `@override` is used before `createState()`. This means you're providing your own version of the `createState()` 
 ///?method that comes from the `StatefulWidget` class (the parent class).2. In the `_QuizState` class, `@override` is used before `build()`. This means you're providing your own version of the `build()` method that comes from the `State` class (the parent class).
 
+//* This is how ternary operator is used in the code
+//*  condition ? value_if_true : value_if_false
 
 
 
