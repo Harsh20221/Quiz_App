@@ -9,12 +9,12 @@ class Quiz extends StatefulWidget {
   @override
   State<Quiz> createState() {
     //! Do not write createState as createstate(){} it will give error , the s in the state is in capital
-    return _QuizState();
+    return _QuizState();  //?This will return the state of the class _QuizState
   }
 }
 
-class _QuizState extends State<Quiz> {
-  Widget ?activescreen;
+class _QuizState extends State<Quiz> { ///? This is the state of the class Quiz
+  Widget ?activescreen;   //! This is the variable which will be used to change the screen
   @override
   void initState() {
     super.initState();

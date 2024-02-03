@@ -12,7 +12,7 @@ void main() {
               end: Alignment.topCenter,
             ),
           ),
-          child: Startscreen()))));} //! This is how you will call the function class 
+          child: Startscreen(Startscreen.new)))));} //! This is how you will call the function class 
 
 
 
