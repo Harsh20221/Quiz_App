@@ -24,10 +24,10 @@ class _QuizState extends State<Quiz> {
 
   @override  
   //TODO: Don't Forget to use the @override keyword  before the build method
-  Widget build(context) { // Implement the missing build method
-  ;/* Widget screenwidget=Startscreen(switchScreen);
+  Widget build(context) {  
+  ; Widget screenwidget=Startscreen(switchScreen);
   if(activescreen=='questions-screen'){ ///! This is an Alternate method to change the screen
-    screenwidget=const QuestionsScreen() */
+    screenwidget=const QuestionsScreen() ;}
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -38,32 +38,31 @@ class _QuizState extends State<Quiz> {
               end: Alignment.topCenter,
             ),
           ),
-          child: activescreen == 'start-screen'  //* This is how ternary operator is used in the code
+          child:screenwidget),),);}} 
+        
+
+
+
+
+
+
+
+
+        ///!This code below is the alternate method to change the screen  just replace the screenwidget in chile with active screen 
+         ///activescreen == 'start-screen'  //* This is how ternary operator is used in the code
 //*  condition ? value_if_true : value_if_false
 
-              ? Startscreen(switchScreen)
-              : const QuestionsScreen(),
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
-
-
-
-
-
-///??? COMMENTS---
+            /// ? Startscreen(switchScreen)
+       ////       : const QuestionsScreen(), 
+        //),
+      //),
+    ///);
+  ///}
+/////
+///??? THIS SECTON CONTAINS COMMON DOUBTS REGARDING THIS CODE 
 ///?In this code, `@override` is used to tell Dart that we're intentionally replacing or "overriding"
 ///?a method from a parent class with a new one.In simple terms, think of it like this: You have a basic recipe (the parent class) for making a sandwich that says you need to add lettuce. But in your version of the recipe (the child class), you want to use spinach instead of lettuce. So you "override" the 
 ///?part of the recipe that adds lettuce with a new part that adds spinach. 
 ///?The `@override` is just a note to say "Hey, I know the original recipe said lettuce, but I'm intentionally using spinach instead.In your code, `@override` is used twice:1. In the `Quiz` class, `@override` is used before `createState()`. This means you're providing your own version of the `createState()` 
-///?method that comes from the `StatefulWidget` class (the parent class).2. In the `_QuizState` class, `@override` is used before `build()`. This means you're providing your own version of the `build()` method that comes from the `State` class (the parent class).
-
-
-
-
+///?method that comes from the `StatefulWidget` class (the parent class).2. In the `_QuizState` class, `@override` is used before `build()`. This means you're providing your own version of the `build()` method that comes from the `State` class (the parent class).\
+ 
