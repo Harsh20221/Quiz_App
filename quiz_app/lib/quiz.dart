@@ -3,7 +3,7 @@ import 'start_sceen.dart';
 import 'questions_screen.dart';
 
 ///! This is how you will import the file from another dart file
-//! Please do not forget to do this import for all the dart files
+//TODO: Please do not forget to do this import for all the dart files
 
 class Quiz extends StatefulWidget {
 const Quiz({super.key});
@@ -12,7 +12,7 @@ State<Quiz> createState() {
 return _QuizState();
 }
 }
-class _QuizState extends State<Quiz> {
+class _QuizState extends State<Quiz> {  ///* This is the state class which will be used to change the screen
   var activescreen = 'start-screen';   //? This is the variable which will be used to change the screen
    //* Here we are initialising activescreen with start-screen
 
@@ -24,14 +24,17 @@ class _QuizState extends State<Quiz> {
 
   @override  
   //TODO: Don't Forget to use the @override keyword  before the build method
-  Widget build(context) {    
-    ///* In the earlier approach instead of defining this Widget screenwidget what we did  is we defined a variable to change state 
-    ///* and then we use ternirary operartor to change the screen
-    ///*but in this approach we are defining a widget to change the screen
-    ///* we have written  this -----Widget screenwidget = Startscreen(switchScreen); as an extra statement to use if else loop 
-  ; Widget screenwidget=Startscreen(switchScreen);
-  if(activescreen=='questions-screen'){ ///! This is an Alternate method to change the screen
-    screenwidget=const QuestionsScreen() ;}
+  Widget build(context) {   
+//* In the current approach instead of defining this as ---" Widget screenwidget"
+//* what we did 
+//* is we defined a variable to change state 
+//* and then we use ternirary operartor to change the screen
+//*but in earlier approach we are defining a widget to change the screen
+//* we have written  this -----Widget screenwidget = Startscreen(switchScreen);
+//* as an extra statement to use if else loop 
+  // Widget screenwidget=Startscreen(switchScreen);
+ //if(activescreen=='questions-screen'){ ///! This is an Alternate method to change the screen
+   // screenwidget=const QuestionsScreen() ;}
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -42,26 +45,19 @@ class _QuizState extends State<Quiz> {
               end: Alignment.topCenter,
             ),
           ),
-          child:screenwidget),),);}} 
+          child:
+          //screenwidget),),);}}  //* This statement will be used in the earlier 
+          //*approach to change the screen
         
-
-
-
-
-
-
-
-
-        ///!This code below is the alternate method to change the screen  just replace the screenwidget in chile with active screen 
-         ///activescreen == 'start-screen'  //* This is how ternary operator is used in the code
-//*  condition ? value_if_true : value_if_false
-
-            /// ? Startscreen(switchScreen)
-       ////       : const QuestionsScreen(), 
-        //),
-      //),
-    ///);
-  ///}
+        ///!This code below is the alternate method to change the screen  just replace the screenwidget in chile with active screen , 
+        ///!currently we are using the alternate method 
+         ///'  //* This is how ternary operator is used in the code
+         //*  condition ? value_if_true : value_if_false
+                activescreen == 'start-screen' ? Startscreen(switchScreen) : const QuestionsScreen(), 
+        ),
+      ),
+    );
+  }}
 /////
 ///??? THIS SECTON CONTAINS COMMON DOUBTS REGARDING THIS CODE 
 ///?In this code, `@override` is used to tell Dart that we're intentionally replacing or "overriding"
