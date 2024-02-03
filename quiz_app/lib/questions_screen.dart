@@ -16,7 +16,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center, //? This is used to align the column in the center
         children: [
-          Text("This Question...."),
+          Text("This Question...." , style: TextStyle(color: Colors.white,)),
           OutlinedButton(onPressed: () {}, child: const Text("Answer1")),
           OutlinedButton(onPressed: () {}, child: const Text("Answer2")),
           OutlinedButton(onPressed: () {}, child:const  Text("Answer3")),
