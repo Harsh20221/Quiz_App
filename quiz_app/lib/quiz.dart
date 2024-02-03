@@ -24,7 +24,11 @@ class _QuizState extends State<Quiz> {
 
   @override  
   //TODO: Don't Forget to use the @override keyword  before the build method
-  Widget build(context) {  
+  Widget build(context) {    
+    ///* In the earlier approach instead of defining this Widget screenwidget what we did  is we defined a variable to change state 
+    ///* and then we use ternirary operartor to change the screen
+    ///*but in this approach we are defining a widget to change the screen
+    ///* we have written  this -----Widget screenwidget = Startscreen(switchScreen); as an extra statement to use if else loop 
   ; Widget screenwidget=Startscreen(switchScreen);
   if(activescreen=='questions-screen'){ ///! This is an Alternate method to change the screen
     screenwidget=const QuestionsScreen() ;}
