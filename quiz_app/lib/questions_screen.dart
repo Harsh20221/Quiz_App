@@ -19,20 +19,58 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //* This sections contains common Doubts and Queries regarding this code
-/* ///?111111111111111  `State<QuestionsScreen> createState()` is a rule for a Flutter widget named `QuestionsScreen`. This rule says: "When you need to remember changes (like user input or data from the internet), use the instructions I'll provide in `createState()` to keep track of those changes.
-So, ///?`createState()` is like a memory box for the `QuestionsScreen` widget. It helps the widget remember things that can change over time. The actual instructions for what to remember and how to handle changes would be inside the `createState()` method, which is not shown in your selected code. */
+/* ///?111111111111111  `State<QuestionsScreen> createState()` is a rule for a Flutter widget named `QuestionsScreen`. This rule says: 
+"When you need to remember changes (like user input or data from the internet), 
+use the instructions I'll provide in `createState()` to keep track of those changes.
+So, ///?`createState()` is like a memory box for the `QuestionsScreen` widget. 
+It helps the widget remember things that can change over time. 
+/?The actual instructions for what to remember and how to handle changes would be inside the `createState()` method, 
+which is not shown in your selected code. */
 
 
-/*//?2222222222222222 in very simple terms, `super.key` is like a special tag or label you can give to your `QuestionsScreen` when you create it. 
-//?This `key` helps Flutter to identify that specific `QuestionsScreen` later on. It's like if you had a bunch of boxes and you put a unique label on one of them so you could find it easily later*/
+/*//?2222222222222222 in very simple terms, `super.key` is like a special tag or label you can give to your
+ `QuestionsScreen` when you create it. 
+//?This `key` helps Flutter to identify that specific `QuestionsScreen` later on.
+//? It's like if you had a bunch of boxes and you put a unique label on one of them so 
+//you could find it easily later*/
 
 
-/* //?333333333333In this code, `@override` is used to tell Dart that we're intentionally replacing or "overriding" a method from a parent class with a new one.
-////?In simple terms, think of it like this: You have a basic recipe (the parent class) for making a sandwich that says you need to add lettuce.
-///? But in your version of the recipe (the child class), you want to use spinach instead of lettuce. So you "override" the part of the recipe 
+/* //?333333333333In this code, `@override` is used to tell Dart that we're intentionally replacing or "overriding"
+ a method from a parent class with a new one.
+////?In simple terms, think of it like this: You have a basic recipe (the parent class) for making a sandwich that says 
+///you need to add lettuce.
+///? But in your version of the recipe (the child class), you want to use spinach instead of lettuce. 
+///?So you "override" the part of the recipe 
 ///?that adds lettuce with a new part that adds spinach. The `@override` is just a note to say "Hey,
 ///? I know the original recipe said lettuce, but I'm intentionally using spinach instead."
+
 ///?In your code, `@override` is used twice:
-1. //?In the `Quiz` class, `@override` is used before `createState()`. This means you're providing your own version of the `createState()` method that comes from the `StatefulWidget` class (the parent class).
-2. //?In the `_QuizState` class, `@override` is used before `build()`. This means you're providing your own version of the `build()` method that comes from the `State` class (the parent class). */
+///
+1. //?In the `Quiz` class, `@override` is used before `createState()`. T
+his means you're providing your own version of the `createState()`
+ method that comes from the `StatefulWidget` class (the parent class).
+2. //?In the `_QuizState` class, `@override` is used before `build()`. 
+This means you're providing your own version of the `build()` method that comes from the 
+`State` class (the parent class). */

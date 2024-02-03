@@ -12,7 +12,7 @@ State<Quiz> createState() {
 return _QuizState();
 }
 }
-class _QuizState extends State<Quiz> {  ///* This is the state class which will be used to change the screen
+class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are defining a new class here to shange the screen 
   var activescreen = 'start-screen';   //? This is the variable which will be used to change the screen
    //* Here we are initialising activescreen with start-screen
 
@@ -33,7 +33,7 @@ class _QuizState extends State<Quiz> {  ///* This is the state class which will 
 //* we have written  this -----Widget screenwidget = Startscreen(switchScreen);
 //* as an extra statement to use if else loop 
   // Widget screenwidget=Startscreen(switchScreen);
- //if(activescreen=='questions-screen'){ ///! This is an Alternate method to change the screen
+ //if(activescreen=='questions-screen'){ ///! This is the earlier  method to change the screen
    // screenwidget=const QuestionsScreen() ;}
     return MaterialApp(
       home: Scaffold(
