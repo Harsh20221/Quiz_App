@@ -20,9 +20,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
         mainAxisAlignment: MainAxisAlignment.center, //? This is used to align the column in the center
         children: [
           Text("This Question...." , style: TextStyle(color: Colors.white,)),
-   AnswerButton(Answertext: currentquestions.answers[1], onTap: (){},), //! Make sure to pass the arguments in the constructor of the class
-   AnswerButton(Answertext: currentquestions.answers[2], onTap: (){}), //TODO: Do not forget to add the comma after the closing parenthesis of the constructor
-   AnswerButton(Answertext: currentquestions.answers[3], onTap: (){}),  //! Use currentquestions.answers to access the answers , Do not use questions.answers
+   AnswerButton(Answertext: currentquestions.answers[0], onTap: (){},), //! Make sure to pass the arguments in the constructor of the class
+   AnswerButton(Answertext: currentquestions.answers[1], onTap: (){}), //TODO: Do not forget to add the comma after the closing parenthesis of the constructor
+   AnswerButton(Answertext: currentquestions.answers[2], onTap: (){}),  //! Use currentquestions.answers to access the answers , Do not use questions.answers
+    AnswerButton(Answertext: currentquestions.answers[3], onTap: (){}), 
         ],
       ),
     );
