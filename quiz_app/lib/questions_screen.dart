@@ -16,19 +16,18 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     final currentquestions = questions[0]; //? This is how you'll access the list of objects from the other file
     return SizedBox(   ///! MAKE SURE TO RETURN SIZED BOX HERE to get the full screen
       width: double.infinity,
-
       child: Container( margin: EdgeInsets.all(20),  //! Margin will always be inside Container and not inside SizedBox , use wrap with container to get margin 
         child: Column(
         mainAxisAlignment: MainAxisAlignment.center, //? This is used to align the column in the center
         crossAxisAlignment: CrossAxisAlignment.center, //? This is used to align the column in the center
         children: [
-          Text("This Question...." , style: TextStyle(color: Colors.white,)),
-          const SizedBox(height: 30,),                                                   ///TODO: close the return AnswerButton ( AnswerText : answers, onTap: (){}); with a semicolon
-          ...currentquestions.answers.map((answers) { return AnswerButton(Answertext: answers, onTap: (){});}), //! Use the spread operator to access the list of answers
-   AnswerButton(Answertext: currentquestions.answers[0], onTap: (){},), //! Make sure to pass the arguments in the constructor of the class
-   AnswerButton(Answertext: currentquestions.answers[1], onTap: (){}), //TODO: Do not forget to add the comma after the closing parenthesis of the constructor
-   AnswerButton(Answertext: currentquestions.answers[2], onTap: (){}),  //! Use currentquestions.answers to access the answers , Do not use questions.answers
-    AnswerButton(Answertext: currentquestions.answers[3], onTap: (){}), 
+          Text(currentquestions.text , style: TextStyle(color: Colors.white,),textAlign: TextAlign.center,),
+          const SizedBox(height: 30),   ///TODO: close the return AnswerButton ( AnswerText : answers, onTap: (){}); with a semicolon
+            ...currentquestions.getShuffledAnswers().map((answers) { return AnswerButton(answertext: answers, onTap: (){});}), //! Use the spread operator to access the list of answers
+   ////AnswerButton(Answertext: currentquestions.answers[1], onTap: (){},), //! Make sure to pass the arguments in the constructor of the class
+   ////AnswerButton(Answertext: currentquestions.answers[1], onTap: (){}), //TODO: Do not forget to add the comma after the closing parenthesis of the constructor
+  //// AnswerButton(Answertext: currentquestions.answers[2], onTap: (){}),  //! Use currentquestions.answers to access the answers , Do not use questions.answers
+    ////AnswerButton(Answertext: currentquestions.answers[3], onTap: (){}), 
         ],
       ),
     ));
