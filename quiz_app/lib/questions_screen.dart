@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/answerbutton.dart';
 import 'package:quiz_app/data/questions.dart';
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({Key? key}) : super(key: key);
+  const QuestionsScreen({ super.key}); //! The name of the class will be same as the file name
 
   @override
   State<QuestionsScreen> createState() {
