@@ -9,7 +9,7 @@ class AnswerButton extends StatelessWidget{
   Widget build(context) {
     return ElevatedButton(
       onPressed: onTap,style: ElevatedButton.styleFrom(
-       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 110),
           backgroundColor: Color.fromARGB(255, 33, 1, 95),
           foregroundColor: Colors.white,
           shape:
@@ -20,4 +20,4 @@ class AnswerButton extends StatelessWidget{
               
   }}
 
- //TODO: Let's say in case your code is not working after a little  odification in the code , then ehat you should do is rewrite it from scratch 
+ //TODO: Let's say in case your code is not working after a little  modification in the code , then ehat you should do is rewrite it from scratch 
