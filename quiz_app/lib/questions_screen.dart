@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/answerbutton.dart';
-import 'package:quiz_app/data/questions.dart';   
- //TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.
+import 'package:quiz_app/data/questions.dart';
+
+//TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({ super.key}); //! The name of the class will be same as the file name
+  const QuestionsScreen(
+      {super.key,
+      required this.onSelectAnswer}); //! The name of the class will be same as the file name ,
+  //TODO: Make sure to add required with onSelectAnswer when defining it inside  const QuestionsScreen along with super.key
+  final void Function(String answer) onSelectAnswer;
+  //!! Make sure to define the void Function () after the const QuestionsScreen
 
   @override
   State<QuestionsScreen> createState() {
@@ -12,63 +18,62 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
-  var currentQuestionIndex = 0; 
-  void answerquestion (){
-    setState((){  ////TODO:!!!!!!!!!!!!!!!!!!!!VERY VERY IMPORTANT -- Make sure to write setState like this --
-    //TODO setState((){}); or else it'll not work and you won't be able to change the screen
-    
+  var currentQuestionIndex = 0;
+  void answerquestion(String selectedanswers) {
+    widget.onSelectAnswer(selectedanswers);  //! Make sure to write it as widget  not Widget , W is going to be in small letters 
+
+    setState(() {
+      ////TODO:!!!!!!!!!!!!!!!!!!!!VERY VERY IMPORTANT -- Make sure to write setState like this --
+      //TODO setState((){}); or else it'll not work and you won't be able to change the screen
+
       currentQuestionIndex++;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    final currentquestions = questions[currentQuestionIndex]; //? This is how you'll access the list of objects from the other file
-    return SizedBox(   ///! MAKE SURE TO RETURN SIZED BOX HERE to get the full screen
-      width: double.infinity,
-      child: Container( margin: EdgeInsets.all(40),  //! Margin will always be inside Container and not inside SizedBox , use wrap with container to get margin 
-        child: Column(
-        mainAxisAlignment: MainAxisAlignment.center, //? This is used to align the column in the center
-        crossAxisAlignment: CrossAxisAlignment.stretch, ///TODO: use crossAlisAlignment.stretch  to have buttons with equal width , if you use centre then the buttons will not be of equal width
-        children: [
-          Text(currentquestions.text , style: TextStyle(color: Colors.white,),textAlign: TextAlign.center,),
-          const SizedBox(height: 30),   ///TODO: close the return AnswerButton ( AnswerText : answers, onTap: (){}); with a semicolon
-            ...currentquestions.getShuffledAnswers().map((answer) { return AnswerButton(answertext: answer, onTap: answerquestion);}), //! Use the spread operator to access the list of answers
-   ////AnswerButton(Answertext: currentquestions.answers[1], onTap: (){},), //! Make sure to pass the arguments in the constructor of the class
-   ////AnswerButton(Answertext: currentquestions.answers[1], onTap: (){}), //TODO: Do not forget to add the comma after the closing parenthesis of the constructor
-  //// AnswerButton(Answertext: currentquestions.answers[2], onTap: (){}),  //! Use currentquestions.answers to access the answers , Do not use questions.answers
-    ////AnswerButton(Answertext: currentquestions.answers[3], onTap: (){}), 
-        ],
-      ),
-    ));
+    final currentquestions = questions[
+        currentQuestionIndex]; //? This is how you'll access the list of objects from the other file
+    return SizedBox(
+
+        ///! MAKE SURE TO RETURN SIZED BOX HERE to get the full screen
+        width: double.infinity,
+        child: Container(
+          margin: EdgeInsets.all(
+              40), //! Margin will always be inside Container and not inside SizedBox , use wrap with container to get margin
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment
+                .center, //? This is used to align the column in the center
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+
+            ///TODO: use crossAlisAlignment.stretch  to have buttons with equal width , if you use centre then the buttons will not be of equal width
+            children: [
+              Text(
+                currentquestions.text,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 30),
+
+              ///TODO: close the return AnswerButton ( AnswerText : answers, onTap: (){}); with a semicolon
+              ...currentquestions.getShuffledAnswers().map((answer) {
+                return AnswerButton(
+                    answertext: answer,
+                    onTap: () {
+                      answerquestion(answer);
+                    });
+              }), //! Use the spread operator to access the list of answers
+            ],
+
+            ///!Using ... currentquestions.getshuffledAnswers.map method n, we are coonvertting it into a list of widgets
+          ),
+        ));
   }
 }
 
-
 //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //* This sections contains common Doubts and Queries regarding this code
 /* ///?111111111111111  `State<QuestionsScreen> createState()` is a rule for a Flutter widget named `QuestionsScreen`. This rule says: 
@@ -79,13 +84,11 @@ It helps the widget remember things that can change over time.
 /?The actual instructions for what to remember and how to handle changes would be inside the `createState()` method, 
 which is not shown in your selected code. */
 
-
 /*//?2222222222222222 in very simple terms, `super.key` is like a special tag or label you can give to your
  `QuestionsScreen` when you create it. 
 //?This `key` helps Flutter to identify that specific `QuestionsScreen` later on.
 //? It's like if you had a bunch of boxes and you put a unique label on one of them so 
 //you could find it easily later*/
-
 
 /* //?333333333333In this code, `@override` is used to tell Dart that we're intentionally replacing or "overriding"
  a method from a parent class with a new one.

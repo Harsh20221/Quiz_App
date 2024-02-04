@@ -13,6 +13,7 @@ return _QuizState();
 }
 }
 class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are defining a new class here to shange the screen 
+final List <String> selectedanswers = [];  //! This is the list of selected answers
   var activescreen = 'start-screen';   //? This is the variable which will be used to change the screen
    //* Here we are initialising activescreen with start-screen
 
@@ -21,7 +22,10 @@ class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are d
       activescreen = 'questions-screen';  //? Here we are changing activescreen to questions-screen
     });
   }
+  void chooseAnswer(String answer){  //? This is the function to choose the answer
+    selectedanswers.add(answer);
 
+  }
   @override  
   //TODO: Don't Forget to use the @override keyword  before the build method
   Widget build(context) {   
@@ -53,7 +57,7 @@ class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are d
         ///!currently we are using the alternate method 
          ///'  //* This is how ternary operator is used in the code
          //*  condition ? value_if_true : value_if_false
-                activescreen == 'start-screen' ? Startscreen(switchScreen) : const QuestionsScreen(), 
+                activescreen == 'start-screen' ? Startscreen(switchScreen) : QuestionsScreen(onSelectAnswer: chooseAnswer,), 
         ),
       ),
     );
