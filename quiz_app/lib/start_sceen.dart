@@ -6,6 +6,7 @@ class Startscreen extends StatelessWidget {
   final Function startQuiz; //! This is the function which will be used to change the screen
   @override //? The word override will be written in small letters not like Override
   Widget build(context) {
+ 
     return Center(
         //! This Center will make sure that the widget is in the center of the screen
         child: Column(

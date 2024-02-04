@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/answerbutton.dart';
+import 'package:quiz_app/data/questions.dart';
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({Key? key}) : super(key: key);
 
@@ -12,15 +13,16 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
+    final currentquestions = questions[0]; //? This is how you'll access the list of objects from the other file
     return SizedBox(   ///! MAKE SURE TO RETURN SIZED BOX HERE to get the full screen
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center, //? This is used to align the column in the center
         children: [
           Text("This Question...." , style: TextStyle(color: Colors.white,)),
-   AnswerButton(Answertext: "ANSWER-1", onTap: (){},), //! Make sure to pass the arguments in the constructor of the class
-   AnswerButton(Answertext: "ANSWER-2", onTap: (){}), //TODO: Do not forget to add the comma after the closing parenthesis of the constructor
-   AnswerButton(Answertext: "ANSWER-3", onTap: (){}), 
+   AnswerButton(Answertext: currentquestions.answers[1], onTap: (){},), //! Make sure to pass the arguments in the constructor of the class
+   AnswerButton(Answertext: currentquestions.answers[2], onTap: (){}), //TODO: Do not forget to add the comma after the closing parenthesis of the constructor
+   AnswerButton(Answertext: currentquestions.answers[3], onTap: (){}),  //! Use currentquestions.answers to access the answers , Do not use questions.answers
         ],
       ),
     );
