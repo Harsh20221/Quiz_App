@@ -16,8 +16,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     final currentquestions = questions[0]; //? This is how you'll access the list of objects from the other file
     return SizedBox(   ///! MAKE SURE TO RETURN SIZED BOX HERE to get the full screen
       width: double.infinity,
-      child: Column(
+
+      child: Container( margin: EdgeInsets.all(20),  //! Margin will always be inside Container and not inside SizedBox , use wrap with container to get margin 
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.center, //? This is used to align the column in the center
+        crossAxisAlignment: CrossAxisAlignment.center, //? This is used to align the column in the center
         children: [
           Text("This Question...." , style: TextStyle(color: Colors.white,)),
           const SizedBox(height: 30,),                                                   ///TODO: close the return AnswerButton ( AnswerText : answers, onTap: (){}); with a semicolon
@@ -28,7 +31,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     AnswerButton(Answertext: currentquestions.answers[3], onTap: (){}), 
         ],
       ),
-    );
+    ));
   }
 }
 
