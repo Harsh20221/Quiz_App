@@ -16,7 +16,7 @@ class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are d
   var activescreen = 'start-screen';   //? This is the variable which will be used to change the screen
    //* Here we are initialising activescreen with start-screen
 
-  void switchScreen() {
+  void switchScreen() {  
     setState(() {
       activescreen = 'questions-screen';  //? Here we are changing activescreen to questions-screen
     });
