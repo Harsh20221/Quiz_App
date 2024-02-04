@@ -17,6 +17,6 @@ class AnswerButton extends StatelessWidget{
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),),);  
               //! Make sure to use EdgeInsets.symmetric after using padding: then apecify vertical and horizontal padding 
+  }}
 
-}
  //TODO: Let's say in case your code is not working after a little  odification in the code , then ehat you should do is rewrite it from scratch 
