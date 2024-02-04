@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'start_sceen.dart';
 import 'questions_screen.dart';
-
+ //TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.
 ///! This is how you will import the file from another dart file
 //TODO: Please do not forget to do this import for all the dart files
 

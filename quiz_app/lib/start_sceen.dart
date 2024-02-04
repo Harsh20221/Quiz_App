@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+ //TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.
 class Startscreen extends StatelessWidget {
   Startscreen(this.startQuiz,
       {super.key}); //! The name Startscreen will be same as the class name don't change cases from upper to lower

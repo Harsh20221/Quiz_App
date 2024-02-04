@@ -3,7 +3,7 @@ import 'package:quiz_app/models/quizquestions.dart';
 ///* THIS FILE CONTAINS THE QUESTIONS FOR THE QUIZ
 const questions =[  //! This is how you declare a list of Objects in Dart , 
    //TODO: Do not forget to add = sign after the list name
-
+ //TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.
          quiz_questions(
     'What are the main building blocks of Flutter UIs?',
     [
