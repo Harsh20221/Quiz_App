@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'start_sceen.dart';
 import 'questions_screen.dart';
+import 'results_screen.dart';
  //TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.
 ///! This is how you will import the file from another dart file
 //TODO: Please do not forget to do this import for all the dart files
@@ -27,7 +28,7 @@ class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are d
     selectedanswers.add(answer);  //? Selected answers is defined here in this file 
 if ( selectedanswers.length==questions.length){  //! This is the condition to check if the length of the selected answers is equal to the length of the questions
 setState(() {
-activescreen='start-screen';  //! This is the condition to change the screen to start-screen
+activescreen='results_screen';  //! This is the condition to change the screen to start-screen
 });
       selectedanswers=[];  //! This is the condition to reset the selected answers
     }  
@@ -36,17 +37,24 @@ activescreen='start-screen';  //! This is the condition to change the screen to 
   @override  
   //TODO: Don't Forget to use the @override keyword  before the build method
   Widget build(context) {   
-//* In the current approach instead of defining this as ---" Widget screenwidget"
+//* In the earlier approach instead of defining this as ---" Widget screenwidget"
 //* what we did 
 //* is we defined a variable to change state 
 //* and then we use ternirary operartor to change the screen
-//*but in earlier approach we are defining a widget to change the screen
+//*but in this  approach we are defining a widget to change the screen
 //* we have written  this -----Widget screenwidget = Startscreen(switchScreen);
 //* as an extra statement to use if else loop 
-  // Widget screenwidget=Startscreen(switchScreen);
- //if(activescreen=='questions-screen'){ ///! This is the earlier  method to change the screen
-   // screenwidget=const QuestionsScreen() ;}
-    return MaterialApp(
+ Widget screenwidget=Startscreen(switchScreen);
+ if(activescreen=='questions-screen'){ ///! This is the new   method to change the screen
+    screenwidget=QuestionsScreen(onSelectAnswer: chooseAnswer,) //TODO: Do not forget to pass chooseanswer inside onselectanswer
+     ;}  ///? onSelectAnswer is defined inside questions_screen.dart at line 12 //? chooseAnswer is defined here in this file at line 26
+   //? switchscrren is defined here at line 22
+
+   if (activescreen=='results_screen'){  //! This is the new method to change the screen
+     screenwidget=results_screen(chosennanswer:selectedanswers);}  //! This is the new method to change the screen
+   //? chosennanswer is defined inside results_screen.dart at line 4 , it is the list of selected answers
+   //? selectedanswers is defined here at line 18 
+    return MaterialApp(  
       home: Scaffold(
         body: Container(
           decoration: BoxDecoration(
@@ -57,19 +65,19 @@ activescreen='start-screen';  //! This is the condition to change the screen to 
             ),
           ),
           child:
-          //screenwidget),),);}}  //* This statement will be used in the earlier 
+          screenwidget),),);}}  //* This statement will be used in the new 
           //*approach to change the screen
         
-        ///!This code below is the alternate method to change the screen  just replace the screenwidget in chile with active screen , 
-        ///!currently we are using the alternate method 
+        ///!This code below is the alternate method to change the screen  just replace the screenwidget in child with active screen , 
+        ///!currently we are not using the alternate method 
          ///'  //* This is how ternary operator is used in the code
          //*  condition ? value_if_true : value_if_false
-                activescreen == 'start-screen' ? Startscreen(switchScreen) : QuestionsScreen(onSelectAnswer: chooseAnswer,),   //? on Select answer is defined inside questions_screen.dart at line 12
-                                                                                    //? chooseAnswer is defined here in this file at line 26
-        ),                 
-      ),
-    );
-  }}
+              ///  activescreen == 'start-screen' ? Startscreen(switchScreen) : QuestionsScreen(onSelectAnswer: chooseAnswer ),   //? on Select answer is defined inside questions_screen.dart at line 12
+                                                           //?switchscrren is defined here at line 22  //? chooseAnswer is defined here in this file at line 26
+   ///     ),                 
+  ///    ),
+ ///   );
+  ///}}
 /////
 ///??? THIS SECTON CONTAINS COMMON DOUBTS REGARDING THIS CODE 
 ///?In this code, `@override` is used to tell Dart that we're intentionally replacing or "overriding"
