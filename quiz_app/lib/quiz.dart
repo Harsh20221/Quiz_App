@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/questions.dart';
 import 'start_sceen.dart';
 import 'questions_screen.dart';
  //TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.
@@ -22,8 +23,14 @@ final List <String> selectedanswers = [];  //! This is the list of selected answ
       activescreen = 'questions-screen';  //? Here we are changing activescreen to questions-screen
     });
   }
-  void chooseAnswer(String answer){  //? This is the function to choose the answer
+  void chooseAnswer(String answer){  //! This is the function to choose the answer
     selectedanswers.add(answer);
+if ( selectedanswers.length==questions.length){  //! This is the condition to check if the length of the selected answers is equal to the length of the questions
+setState(() {
+activescreen='start-screen';  //! This is the condition to change the screen to start-screen
+});
+      print('Quiz Over');  //! This will print Quiz Over in the console
+    }
 
   }
   @override  
