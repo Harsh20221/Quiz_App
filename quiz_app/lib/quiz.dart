@@ -14,7 +14,7 @@ return _QuizState();
 }
 }
 class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are defining a new class here to shange the screen 
-final List <String> selectedanswers = [];  //! This is the list of selected answers
+ List <String> selectedanswers = [];  //TODO: This is the list of selected answers , Make sure to not assign it as final because we'll be resseting it 
   var activescreen = 'start-screen';   //? This is the variable which will be used to change the screen
    //* Here we are initialising activescreen with start-screen
 
@@ -29,7 +29,7 @@ if ( selectedanswers.length==questions.length){  //! This is the condition to ch
 setState(() {
 activescreen='start-screen';  //! This is the condition to change the screen to start-screen
 });
-      print('Quiz Over');  //! This will print Quiz Over in the console
+      selectedanswers=[];  //! This is the condition to reset the selected answers
     }
 
   }
