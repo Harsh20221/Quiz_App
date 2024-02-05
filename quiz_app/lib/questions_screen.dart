@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/answerbutton.dart';
 import 'package:quiz_app/data/questions.dart';
 
@@ -50,11 +51,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             children: [
               Text(
                 currentquestions.text,
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-                textAlign: TextAlign.center,
-              ),
+                style: GoogleFonts.lato(  ///? Use GoogleFonts.lato to change the font style
+                    textStyle: const TextStyle(
+                        fontSize: 30,  
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold)),
+                textAlign: TextAlign.center,),
               const SizedBox(height: 30),
 
               ///TODO: close the return AnswerButton ( AnswerText : answers, onTap: (){}); with a semicolon
