@@ -4,5 +4,5 @@ import 'package:quiz_app/quiz.dart';
 void main() {
   runApp(Quiz()); //TODO: Plaease don't forget to call the class name here
    
-}
+}  //? Quiz is defined in quiz.dart
  //TODO--NOTE!!! The lines marked with TODO in this entire project were serious bugs that  I had to fix in order to make the code work.

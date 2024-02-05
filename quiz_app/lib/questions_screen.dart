@@ -22,7 +22,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
   void answerquestion(String selectedanswers) {
     widget.onSelectAnswer(selectedanswers);  //! Make sure to write it as widget  not Widget , W is going to be in small letters 
-
+//? on select answer is defined here in this file at line 12
     setState(() {
       ////TODO:!!!!!!!!!!!!!!!!!!!!VERY VERY IMPORTANT -- Make sure to write setState like this --
       //TODO setState((){}); or else it'll not work and you won't be able to change the screen
@@ -32,10 +32,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final currentquestions = questions[
         currentQuestionIndex]; //? This is how you'll access the list of objects from the other file
-    return SizedBox(
+    return SizedBox(  //? currrentQuestionsindex is defined here at line 22
 
         ///! MAKE SURE TO RETURN SIZED BOX HERE to get the full screen
         width: double.infinity,
@@ -51,7 +51,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             children: [
               Text(
                 currentquestions.text,
-                style: GoogleFonts.lato(  ///? Use GoogleFonts.lato to change the font style
+                style: GoogleFonts.lato(  ///? Use GoogleFonts.lato to change the font style , it is defined from gooogle font library 
                     textStyle: const TextStyle(
                         fontSize: 30,  
                         color: Colors.white,
@@ -60,11 +60,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               const SizedBox(height: 30),
 
               ///TODO: close the return AnswerButton ( AnswerText : answers, onTap: (){}); with a semicolon
-              ...currentquestions.getShuffledAnswers().map((answer) {
+              ...currentquestions.getShuffledAnswers().map((answer) { //? getshuffledAnswers is defined inside quizquestions.dart file
                 return AnswerButton(
-                    answertext: answer,
-                    onTap: () {
-                      answerquestion(answer);
+                    answertext: answer, //? answer is defined inside quiz.dat at line 26
+                    onTap: () {  //? onTap is defined inside answerbutton file at line 7
+                      answerquestion(answer);  //? string answer is defined inside quiz.dat at line 26 
                     });
               }), //! Use the spread operator to access the list of answers
             ],

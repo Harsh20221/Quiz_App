@@ -21,17 +21,17 @@ class _QuizState extends State<Quiz> {  ///* This is the state class ,  we are d
   void switchScreen() {  
     setState(() {
       activescreen = 'questions-screen';  //? Here we are changing activescreen to questions-screen
-    });
+    });  //? Activescreen is also defined here in this file too  , // Active screen is defined here at line 18
   }
-  void chooseAnswer(String answer){  //! This is the function to choose the answer
-    selectedanswers.add(answer);
+  void chooseAnswer(String answer){  //! This is the function to choose the answer  
+    selectedanswers.add(answer);  //? Selected answers is defined here in this file 
 if ( selectedanswers.length==questions.length){  //! This is the condition to check if the length of the selected answers is equal to the length of the questions
 setState(() {
 activescreen='start-screen';  //! This is the condition to change the screen to start-screen
 });
       selectedanswers=[];  //! This is the condition to reset the selected answers
-    }
-
+    }  
+  //? selected answers is defined here in this file AT LINE 17
   }
   @override  
   //TODO: Don't Forget to use the @override keyword  before the build method
@@ -64,8 +64,9 @@ activescreen='start-screen';  //! This is the condition to change the screen to 
         ///!currently we are using the alternate method 
          ///'  //* This is how ternary operator is used in the code
          //*  condition ? value_if_true : value_if_false
-                activescreen == 'start-screen' ? Startscreen(switchScreen) : QuestionsScreen(onSelectAnswer: chooseAnswer,), 
-        ),
+                activescreen == 'start-screen' ? Startscreen(switchScreen) : QuestionsScreen(onSelectAnswer: chooseAnswer,),   //? on Select answer is defined inside questions_screen.dart at line 12
+                                                                                    //? chooseAnswer is defined here in this file at line 26
+        ),                 
       ),
     );
   }}

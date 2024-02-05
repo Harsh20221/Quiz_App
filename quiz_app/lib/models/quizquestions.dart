@@ -5,8 +5,8 @@ class quiz_questions {
   final String text;
   final List <String> answers ; //! Do not write String as string , the S will be capital 
   List<String> getShuffledAnswers(){
-    final shuffledAnswers= List.of( answers);
-    shuffledAnswers.shuffle();
+    final shuffledAnswers= List.of( answers);//? answers is defined here in this file
+    shuffledAnswers.shuffle();  
     return shuffledAnswers;
   }
 }

@@ -32,7 +32,7 @@ class Startscreen extends StatelessWidget {
         OutlinedButton.icon(
           //! In order to add icon in button write OutlinedButton.icon
           onPressed: () {
-            startQuiz();
+            startQuiz(); /// ? startQuiz is defined here in this file
           },
           icon: const Icon(Icons
               .arrow_right_alt), //! The icon will be written as icon and it is a must

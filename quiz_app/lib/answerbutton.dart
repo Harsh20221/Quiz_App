@@ -8,14 +8,14 @@ class AnswerButton extends StatelessWidget{
   @override
   Widget build(context) {
     return ElevatedButton(
-      onPressed: onTap,style: ElevatedButton.styleFrom(
+      onPressed: onTap,style: ElevatedButton.styleFrom(    ///? OnTap is defined here in this file at line 7 
        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
           backgroundColor: Color.fromARGB(255, 33, 1, 95),
           foregroundColor: Colors.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
 ), //! Make sure to use EdgeInsets.symmetric after using padding: then apecify vertical and horizontal padding 
-      child: Text(answertext),
+      child: Text(answertext), //? answertext is assigned here in this file 
       );  
               
   }}
