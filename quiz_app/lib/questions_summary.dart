@@ -9,7 +9,9 @@ class QuestionsSummary extends StatelessWidget {
       children: summarydata.map((data) { //? Summarydata is defined here at line 4
         return Row(
           children: [  //* Here the below code is helping to display the summary of the quiz
-            Text(((data['question_index'] as int) + 1).toString()), //? Here we are Converting a int to string using toString() method
+            Text(((data['question_index'] as int) + 1).toString()),  //? Here we are Converting a int to string using toString() method
+            Text(data['question'] as String),  //? Here we are converting a string to int using as int
+            const SizedBox(height: 5),
           ], ///* Here we are adding 1 to the index of the question because our index starts from 0 and we want to display the question number starting from 1
         );
       }).toList(),//? Here we are converting the map to list, map returns a iterable so we are converting it to list
