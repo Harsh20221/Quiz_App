@@ -8,11 +8,18 @@ class QuestionsSummary extends StatelessWidget {
     return Column(
       children: summarydata.map((data) { //? Summarydata is defined here at line 4
         return Row(
-          children: [  //* Here the below code is helping to display the summary of the quiz
-            Text(((data['questions_index'] as int) + 1).toString()),  //TODO: Make sure to type the correct name of the data key as initialised inside results_screen.dart , do not type 'questions' as 'question' inside the data string 
-              //? Here we are Converting a int to string using toString() method
-            Text(data['questions'] as String),  //? Here we are converting a string to int using as int 
-            const SizedBox(height: 5),
+          children: [
+            Expanded(child: Column(
+                  children: [  //* Here the below code is helping to display the summary of the quiz
+                    Text(((data['questions_index'] as int) + 1).toString()),  //TODO: Make sure to type the correct name of the data key as initialised inside results_screen.dart , do not type 'questions' as 'question' inside the data string 
+                      //? Here we are Converting a int to string using toString() method
+                    Text(data['questions'] as String),  //? Here we are converting a string to int using as int 
+                    const SizedBox(height: 5),
+                    Text(data['correctanswers'] as String), 
+                    Text(data['user_answers'] as String)
+                  ],
+                ),
+            ),
           ], ///* Here we are adding 1 to the index of the question because our index starts from 0 and we want to display the question number starting from 1
         );
       }).toList(),//? Here we are converting the map to list, map returns a iterable so we are converting it to list

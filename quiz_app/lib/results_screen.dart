@@ -12,8 +12,8 @@ class results_screen extends StatelessWidget
 
    for (var i=0 ; i<chosennanswer.length ; i++)
    {
-      summary.add({'questions_index':i, 'questions':questions[i].text , 'answers':questions[i].answers[0]});}
-      return summary;} //TODO: Do not forget to add return summary in the end of the function
+      summary.add({'questions_index':i, 'questions':questions[i].text , 'correctanswers':questions[i].answers[0] , 'user_answers':chosennanswer[i]});} //? chosenanswer is defined here at line 8
+      return summary;} //TODO: Do not forget to add return summary in the end of the function ///TODO: Make sure to add [i] index value  after chosennanswer 
   //? Here we are making summary of the quiz , we have specified answers as 0 because we have our first answer always as the correct answer
   @override
   Widget build(context) {
