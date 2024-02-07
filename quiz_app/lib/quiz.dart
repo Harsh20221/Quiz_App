@@ -30,7 +30,7 @@ if ( selectedanswers.length==questions.length){  //! This is the condition to ch
 setState(() {
 activescreen='results_screen';  //! This is the condition to change the screen to start-screen
 });
-      selectedanswers=[];  //! This is the condition to reset the selected answers
+     ////// selectedanswers=[];  //! This is the condition to reset the selected answers
     }  
   //? selected answers is defined here in this file AT LINE 17
   }
